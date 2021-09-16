@@ -1,0 +1,129 @@
+body{
+  background: #eee;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+main#reviews {
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  
+
+}
+
+
+main#reviews label {
+  border-top: 1px solid #ccc;
+  font-weight: bold;
+  display:block;
+  padding: 10px 0;
+}
+
+main#reviews ul{
+  padding: 0;
+}
+main#reviews ul li{
+  display: flex;
+  padding: 5px;
+  flex-direction: row-reverse;
+  justify-content:flex-end; 
+  align-items: flex-end;  
+}
+
+main#reviews ul li div{
+  padding: 0 15px 0 0;
+}
+main#reviews button{
+  position: absolute;
+  margin-top: -40px;
+  right: 50px;
+
+}
+
+.total{
+  display:flex;
+  width: 60%;
+  justify-content: space-between;
+  padding: 20px 0;
+  align-items: flex-end;
+}
+
+main#reviews div.review {
+  margin: 50px;
+  padding: 50px;
+  background: white;
+  position:relative;
+}
+
+div#modal {
+
+   transition: all .2s;
+   background:rgba(0,0,0,.5);
+ 
+   
+  position: fixed;
+  margin:auto;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+  height:0;
+  width: 0;
+  overflow: hidden;
+}
+
+div#modal form{
+  padding: 20px;
+  background: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 300px;
+  min-height: 300px;
+}
+button {
+  padding: 5px;
+  background: white;
+  border: 1px solid #ccc;
+  
+}
+
+button:hover {
+  background: #eee;
+  cursor:pointer;
+}
+div#modal form textarea{
+  border-bottom: 1px solid #ddd;
+  margin: 20px 0;
+  width: 100%;
+  outline:none;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+div#modal.open {
+  height: 100vh;
+  width: 100vw;
+
+}
+
+button#cancel{
+  position: absolute;
+  top: 20px;
+  right:20px;
+  padding:5px;
+}
+
+li{
+  list-style: none;
+}
+
+.total .star-ratings {
+}

@@ -1,0 +1,104 @@
+.star-ratings {
+    white-space: nowrap;
+    transform: scaleX(-1);
+    /* background-color:#ddd;
+    height: 3rem; */
+    display: flex;
+    justify-content: center;
+
+}
+
+.star-ratings input {
+ 
+    border: 1px dashed black;
+    background: black;
+    visibility: hidden;
+    margin: 0 -2px;
+}
+
+.star-ratings input:before {
+    transition:all .2s;
+    display: inline-block;
+    width: 10px;
+    font-size: 20px;
+    overflow: hidden;
+    visibility: visible;
+    margin-top:-10px;
+    margin-left: 20px;
+}
+
+
+#modal .star-ratings{
+    transform: scaleX(-1) scale(2);
+}
+#modal .star-ratings input:before {
+    margin-left:-5vw;
+}
+
+#modal .star-ratings input {
+    margin: 0 -1.5px;
+}
+
+.star-ratings input:not(checked)::before,
+.star-ratings input:not(checked)~input::before {
+    /* border: 1px solid pink !important; */
+    content: "\2605" !important;
+    color: lightgray;
+}
+
+
+
+/* .star-ratings input:not(checked):nth-child(even)~input::before {
+    border: 1px solid pink !important;
+    content: 'hey' !important
+} */
+
+
+.star-ratings input:checked~input::before {
+    /* border: 1px solid green !important; */
+    content: "\2605" !important;
+    color: gold;
+
+}
+
+.star-ratings input:nth-child(even):before {
+    /* border: 1px solid blue !important; */
+
+    /* direction: 'rtl'; */
+    transform: scaleX(-1);
+    content: "\2605" !important;
+    
+}
+
+
+
+
+.star-ratings input:checked::before {
+    /* transform: scaleX(1); */
+    /* border: 1px solid red; */
+    content: "\2605" !important;
+    color:gold !important;
+}
+.star-ratings:hover input::before{
+    color:lightgray !important;
+}
+
+.star-ratings input:hover~input::before {
+    color:yellow !important;
+}
+
+
+.star-ratings input:hover::before{
+    color:yellow !important;
+}
+
+/* .star-ratings input:hover .star-ratings input:checked::before {
+    color:gold !important; 
+    border: 1px solid red;  
+} */
+
+.star-ratings input:hover ~input:checked::before {
+    /* color:darkgoldenrod !important; */
+}
+
+
