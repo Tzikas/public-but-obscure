@@ -6,7 +6,7 @@ import io from "socket.io-client";
 
 
 //Define Server
-const serverUrl = process.env.NODE_ENV !== 'production' ? 'https://pure-hollows-59166.herokuapp.com/api' : 'http://localhost:8000/api'
+const serverUrl = process.env.NODE_ENV === 'production' ? 'https://pure-hollows-59166.herokuapp.com/api' : 'http://localhost:8000/api'
 
 //Connect to Socket
 const socket = io(serverUrl.replace("/api", ""))
