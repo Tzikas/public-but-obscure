@@ -96,6 +96,7 @@ button {
   
 }
 
+
 button:hover {
   background: #eee;
   cursor:pointer;
@@ -126,4 +127,16 @@ li{
 }
 
 .total .star-ratings {
+}
+
+.loading {
+  position: fixed;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    height: 100vh;
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-
+import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 import io from "socket.io-client";
 
 
@@ -19,11 +19,12 @@ function App() {
   let [name, setName] = useState('')
   let [mClass, setMClass] = useState('')
   let [total, setTotal] = useState(0)
+  let [loading, setLoading] = useState(true)
 
   useEffect(async () => {
 
     let res = await axios.get(serverUrl)
-    console.log(res)
+    setLoading(false)
     setReviews(res.data)
     setTotal(res.data.reduce((val, cur) => val + cur.rating, 0))
 
@@ -32,7 +33,6 @@ function App() {
 
   useEffect(() => {
     socket.on('review', function (review) {
-      console.log(reviews, review, review.name)
       let newReviews = [...reviews]
       newReviews.push(review)
       setReviews(newReviews)
@@ -54,7 +54,6 @@ function App() {
 
         <div className="star-ratings" style={{ pointerEvents: 'none' }} >
           {[...new Array(10)].map((x, i) => {
-            console.log(i / 2, each.rating)
             return (
               <input key={i} defaultChecked={(10 - i) / 2 === each.rating} type="radio" name={`rating_${each._id}`} />
             )
@@ -68,9 +67,6 @@ function App() {
   const submitReview = async (e) => {
     e.preventDefault()
     let res = await axios.post(serverUrl, { name, message, rating })
-    // let newReviews = { ...reviews }
-    // newReviews[name].push(res.data)
-    // setReviews(newReviews)
     setMClass('')
     setMessage('')
 
@@ -78,6 +74,15 @@ function App() {
 
   return (
     <div className="App">
+
+      {loading ?
+        <div class="loading">
+          Loading up server...
+          <ClimbingBoxLoader loading={true} />
+        </div>
+        : null}
+
+
 
       <main id="reviews" >
 
