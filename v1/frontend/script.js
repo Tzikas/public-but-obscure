@@ -1,6 +1,7 @@
 
-const serverUrl = 'http://localhost:5000/api' //Local
-const serverUrl = 'https://pure-hollows-59166.herokuapp.com/api' //Production
+let serverUrl = 'http://localhost:5000/api' //Local
+serverUrl = 'https://pure-hollows-59166.herokuapp.com/api' //Production
+
 let total = 0
 
 //Select html elements
