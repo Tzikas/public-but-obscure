@@ -76,7 +76,7 @@ function App() {
     <div className="App">
 
       {loading ?
-        <div class="loading">
+        <div className="loading">
           Loading up server...
           <ClimbingBoxLoader loading={true} />
         </div>
